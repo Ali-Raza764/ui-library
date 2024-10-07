@@ -1,8 +1,19 @@
 {
-  "name": "ui-library",
-  "private": true,
+  "name": "@razamindset/ui-library",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/ui-library.umd.cjs",
+  "module": "dist/ui-library.js",
+  "exports": {
+    ".": {
+      "import": "./dist/ui-library-esm.js",
+      "require": "./dist/ui-library-umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -12,8 +23,13 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@volar/typescript": "^2.4.6",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.3",
+    "vite-plugin-dts": "^4.2.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
